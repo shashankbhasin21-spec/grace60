@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Grace60: H-1B / L-1 / TN layoff 60-day grace period date planner</title>
+<meta name="description" content="Laid off on H-1B, L-1, E-3, O-1 or TN? Work out your last possible grace-period day (60 days or your I-94 end, whichever is shorter), see the options USCIS lists, and track your documents. Free, private, not legal advice.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap">
+<a class="brand" href="./">Grace60</a>
+<nav class="top" aria-label="Main">
+<a href="#calc">Date planner</a>
+<a href="#checklist">Checklist</a>
+<a href="#pricing">Pricing</a>
+</nav>
+</div>
+</header>
+<main class="wrap">
+<section class="hero">
+<h1>Laid off on a US work visa? Know your real deadline today.</h1>
+<p class="tagline-hi" lang="hi">H-1B &#2346;&#2352; layoff? &#2309;&#2346;&#2344;&#2368; 60-&#2342;&#2367;&#2344; grace period &#2325;&#2368; &#2310;&#2326;&#2367;&#2352;&#2368; &#2340;&#2366;&#2352;&#2368;&#2326; &#2324;&#2352; &#2357;&#2367;&#2325;&#2354;&#2381;&#2346; &#2319;&#2325; &#2346;&#2375;&#2332; &#2346;&#2352;&#2404;</p>
+<p class="lead">Under <a href="https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-214/section-214.1" rel="noopener noreferrer" target="_blank">8 CFR 214.1(l)(2)</a>, workers in E-1, E-2, E-3, H-1B, H-1B1, L-1, O-1 or TN status (and their dependents) are not treated as out of status for up to <strong>60 consecutive days</strong> after employment ends, <strong>or until the end of their authorized validity period, whichever is shorter</strong>, once per validity period. Grace60 does that date maths, lists the options USCIS describes, and keeps a private checklist of what you need to gather.</p>
+<p class="alert"><strong>Watch this rule:</strong> on 11 Sep 2026 DHS published a <a href="https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18631.pdf" rel="noopener noreferrer" target="_blank">proposed rule</a> to remove the up-to-60-day grace period. A proposed rule is not in effect; check the Federal Register and USCIS for the current status before relying on any date here.</p>
+<p class="note"><strong>Privacy:</strong> nothing you type leaves this device. No accounts, analytics or cookies.</p>
+<p class="note warn"><strong>Not legal or immigration advice.</strong> Grace60 is a date calculator and checklist, not a law firm. DHS can shorten or eliminate the grace period at its discretion. Talk to an immigration attorney about your own case.</p>
+</section>
+<section id="calc" aria-labelledby="calc-h">
+<h2 id="calc-h">1. Grace-period date planner</h2>
+<p class="lead-sm">Enter the date your employment officially ended (confirm it with HR in writing; it is not always your last day at the desk) and the end date on your I-94 or approval notice. Simple date arithmetic only.</p>
+<div class="card form-grid">
+<label>Employment end date <input id="end-date" type="date" autocomplete="off"></label>
+<label>Authorized stay ends (I-94 / I-797 end date) <input id="i94-date" type="date" autocomplete="off"></label>
+<label><span><input id="used-before" type="checkbox"> I already used a grace period during this same validity period</span></label>
+<label>Notes (optional) <input id="calc-notes" type="text" maxlength="120" placeholder="e.g. attorney call booked, offer from X" autocomplete="off"></label>
+</div>
+<div class="actions">
+<button type="button" id="btn-calc" class="btn primary">Calculate</button>
+<button type="button" id="btn-clear-calc" class="btn ghost">Clear</button>
+</div>
+<div class="card" aria-live="polite">
+<p class="small">Latest possible grace-period day (if DHS does not shorten it):</p>
+<p class="big" id="calc-result">&#8212;</p>
+<p class="small" id="calc-detail"></p>
+</div>
+</section>
+<section id="options" aria-labelledby="opt-h">
+<h2 id="opt-h">2. Options USCIS lists (file before the grace period ends)</h2>
+<div class="card">
+<p class="small">From USCIS, <a href="https://www.uscis.gov/archive/options-for-nonimmigrant-workers-following-termination-of-employment" rel="noopener noreferrer" target="_blank">Options for Nonimmigrant Workers Following Termination of Employment</a>. If you are eligible and one of these happens within the grace period, your authorized stay can run past 60 days:</p>
+<ul class="plain">
+<li><strong>New employer petition</strong> (for example an H-1B change-of-employer petition). An eligible H-1B worker can generally start with the new employer once a non-frivolous petition is properly filed.</li>
+<li><strong>Change of status</strong> to another nonimmigrant status, such as H-4, L-2, F-1 or B-2 visitor, if eligible.</li>
+<li><strong>Adjustment of status</strong> (green card application), if eligible.</li>
+<li><strong>Compelling-circumstances EAD</strong>, a discretionary option for some workers with an approved I-140.</li>
+</ul>
+<p class="small">If nothing is filed in time, USCIS says the worker and dependents may need to leave within 60 days or by the end of the validity period, whichever is shorter.</p>
+</div>
+</section>
+<section id="checklist" aria-labelledby="check-h">
+<h2 id="check-h">3. Layoff document checklist</h2>
+<p class="lead-sm">Tick what you have. Progress saves only on this device.</p>
+<div class="card" id="check-list"></div>
+<p class="small" id="check-status" aria-live="polite"></p>
+<div class="actions">
+<button type="button" id="btn-export" class="btn primary">Copy summary</button>
+<button type="button" id="btn-print" class="btn">Print / save PDF</button>
+<button type="button" id="btn-reset-check" class="btn ghost">Reset checklist</button>
+</div>
+</section>
+<section id="pricing" aria-labelledby="price-h">
+<h2 id="price-h">Pricing</h2>
+<div class="price-grid">
+<div class="card price">
+<h3>Free planner</h3>
+<p class="amount">$0</p>
+<ul class="plain"><li>Grace-period date planner</li><li>USCIS options summary</li><li>Document checklist, copy or print</li></ul>
+<a class="btn" href="#calc">Use free tool</a>
+</div>
+<div class="card price featured">
+<h3>Pro pack</h3>
+<p class="amount">$9.99 <span class="or">/ &#8377;799</span></p>
+<p class="small">One-time &#183; waitlist only for now</p>
+<ul class="plain"><li>Printable day-by-day 60-day plan</li><li>Email templates to HR (confirm end date, request pay stubs, I-797s, letters)</li><li>Questions to bring to an immigration attorney</li><li>Family (H-4 / L-2) and India-return checklist</li></ul>
+<a class="btn primary" href="mailto:shashankbhasin21@gmail.com?subject=Grace60%20Pro%20waitlist&amp;body=I%20want%20the%20Grace60%20Pro%20pack%20(%249.99%20%2F%20%E2%82%B9799).%0A%0AName%3A%0AVisa%20type%3A%0A">Email to join waitlist</a>
+<p class="small">Pay link coming when the payment listing is ready. No fake reviews; no invented traction.</p>
+</div>
+</div>
+</section>
+<section id="sources" aria-labelledby="src-h">
+<h2 id="src-h">Official sources</h2>
+<div class="card">
+<ul class="plain">
+<li><a href="https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-214/section-214.1" rel="noopener noreferrer" target="_blank">8 CFR 214.1 (see paragraph (l)(2))</a></li>
+<li><a href="https://www.uscis.gov/archive/options-for-nonimmigrant-workers-following-termination-of-employment" rel="noopener noreferrer" target="_blank">USCIS: options after termination of employment</a></li>
+<li><a href="https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18631.pdf" rel="noopener noreferrer" target="_blank">Federal Register, 11 Sep 2026: proposed removal of the grace period (PDF)</a></li>
+<li><a href="https://i94.cbp.dhs.gov/" rel="noopener noreferrer" target="_blank">CBP: get your most recent I-94</a></li>
+</ul>
+<p class="small">Heading back to India? Sister kits: <a href="https://shashankbhasin21-spec.github.io/mohlat/" rel="noopener noreferrer" target="_blank">Mohlat (passport / OCI / PCC deadlines)</a> &#183; <a href="https://shashankbhasin21-spec.github.io/pf-claim-kit/" rel="noopener noreferrer" target="_blank">PF Claim Kit</a>.</p>
+</div>
+</section>
+</main>
+<footer class="site">
+<div class="wrap">
+<p class="small">&#169; 2026 APEX HOLDING &#183; sold by Shashank Bhasin &#183; D-168 Greater Kailash, Delhi &#183; GSTIN unregistered &#183; <a href="mailto:shashankbhasin21@gmail.com">shashankbhasin21@gmail.com</a></p>
+<nav class="top" aria-label="Legal">
+<a href="terms.html">Terms</a>
+<a href="privacy.html">Privacy</a>
+<a href="refund.html">Refunds</a>
+</nav>
+</div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
